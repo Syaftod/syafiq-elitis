@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata & Film Favorit</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .welcome-screen, .greeting-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .welcome-screen input, .welcome-screen button, .greeting-screen button {
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .welcome-screen button, .greeting-screen button {
+            background: #ffcc00;
+            border: none;
+            cursor: pointer;
+        }
+        .navbar {
+            background-color: #ffcc00;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            transition: 0.3s;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #ff9900;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function startWebsite() {
+            let username = document.getElementById("username").value;
+            if (username.trim() !== "") {
+                document.getElementById("welcome-screen").style.display = "none";
+                document.getElementById("greeting-screen").style.display = "flex";
+                document.getElementById("greeting-message").innerText = "Selamat datang, " + username + "! Selamat menikmati website Syafiq Kebelet Elitis.";
+            }
+        }
+        
+        function showMainContent() {
+            document.getElementById("greeting-screen").style.display = "none";
+            document.querySelectorAll('.container').forEach(container => container.style.display = 'block');
+        }
+    </script>
+</head>
+<body>
+    <div class="welcome-screen" id="welcome-screen">
+        <h1>Masukkan Nama Anda</h1>
+        <input type="text" id="username" placeholder="Nama Anda">
+        <button onclick="startWebsite()">Konfirmasi</button>
+    </div>
+    
+    <div class="greeting-screen" id="greeting-screen" style="display: none;">
+        <h1 id="greeting-message"></h1>
+        <button onclick="showMainContent()">Oke</button>
+    </div>
+    
+    <div class="navbar">
+        <a href="#about">Tentang Saya</a>
+        <a href="#movies">Film Favorit</a>
+        <a href="#series">Series Favorit</a>
+        <a href="#reviews">Ulasan Film</a>
+        <a href="#contact">Kontak</a>
+    </div>
+    
+    <div class="container" id="about">
+        <h1>Tentang Saya</h1>
+        <img src="Images/𝐩𝐚𝐭𝐫𝐢𝐜𝐤 𝐛𝐚𝐭𝐞𝐦𝐚𝐧.jpg" alt="Foto Profil">
+        <p>Nama: Syafiq Kebelet Elitis</p>
+        <p>Genre favorit: Thriller,Action,Comedy,Psychological,Sci-Fi</p>
+        <p>Sutradara favorit: David Fincher, Andrei tarkovsky, Stanley Kubrick</p>
+        <p>Aktor favorit: Ryan Gosling,Brad Pitt,Christian Bale</p>
+        <p>Quotes favorite :“The first rule of Fight Club is: You do not talk about Fight Club.”
+            “You talking to me?” – Taxi Driver
+            “I am the one who knocks.” – Breaking Bad
+            "Stop trying to control everythink and just let go! LET GO!" -Fight Club.</p>
+        <p>Saya adalah seorang cinephile yang melihat film lebih dari sekadar hiburan. Film bagi saya adalah bentuk seni yang mampu membawa kita ke dunia lain, membuka perspektif baru, dan menggali makna yang lebih dalam tentang kehidupan. Saya menyukai film dengan cerita yang kuat, karakter yang kompleks, serta kritik sosial yang tajam. Dari sinematografi yang memukau hingga naskah yang cerdas, saya selalu tertarik untuk mendiskusikan dan menganalisis film-film yang menggugah pemikiran. Selamat datang di dunia saya!</p>
+    </div>
+    
+    <div class="container" id="movies">
+        <h1>Film Favorit Saya</h1>
+        <img src="Images/Fight Club.jpg" alt="Fight Club">
+        <img src="Images/Schindler's List.jpg" alt="Schindler's List">
+        <img src="Images/One Flew over the Cuckoo's Nest.jpg" alt="One Flew Over the Cuckoo's Nest">
+        <img src="Images/Taxi Driver.jpg" alt="Taxi Driver">
+    </div>
+    
+    <div class="container" id="series">
+        <h1>Series Favorit Saya</h1>
+        <img src="Images/֙⋆ 🩰 𖥻 𝗴𝗰𝗳𝗯𝘁𝘀𝘁𝗮𝗿 𖦆ˑ 𖥻.jpg" alt="Breaking Bad">
+        <img src="Images/DEXTER.jpg" alt="Dexter">
+        <img src="Images/The Boys Season 2.jpg" alt="The Boys">
+        <img src="Images/The punisher Netflix.jpg" alt="The Punisher">
+    </div>
+    
+    <div class="container" id="reviews">
+        <h1>Ulasan Film</h1>
+        <p><strong>Fight Club</strong> - Film ini adalah kritik terhadap masyarakat konsumtif dan identitas maskulinitas. Mengikuti kisah seorang pria tanpa nama yang bosan dengan hidupnya, ia menemukan kebebasan dalam kekacauan bersama Tyler Durden. Seiring berjalannya cerita, kita menyadari ada lapisan psikologis yang lebih dalam dalam kepribadian mereka.</p>
+        <p><strong>Schindler's List</strong> - Kisah nyata Oskar Schindler yang menyelamatkan lebih dari seribu orang Yahudi dari Holocaust. Film ini menunjukkan betapa satu individu bisa membuat perubahan besar dalam sejarah dan menyentuh emosi dengan penggambaran tragedi manusia.</p>
+        <p><strong>One Flew Over the Cuckoo's Nest</strong> - Film ini mengkritik sistem kesehatan mental dan bagaimana institusi bisa menekan kebebasan individu. Karakter McMurphy mencoba melawan sistem tersebut, tetapi akhirnya menghadapi konsekuensi tragis.</p>
+        <p><strong>Taxi Driver</strong> - Kisah seorang pria kesepian di kota besar yang perlahan kehilangan kewarasannya. Film ini menggambarkan keterasingan sosial dan bagaimana seseorang bisa bertransformasi menjadi sosok yang berbahaya akibat isolasi.</p>
+        <p><strong>Breaking Bad</strong> - Mengisahkan perjalanan seorang guru kimia menjadi pengedar narkoba. Serial ini menunjukkan bagaimana keadaan bisa mengubah seseorang dan mempertanyakan batas moral dalam kehidupan.</p>
+        <p><strong>Dexter</strong> - Bercerita tentang seorang pembunuh berantai yang hanya membunuh orang jahat. Serial ini membawa kita ke dalam dilema moral tentang keadilan dan pembenaran tindakan kriminal.</p>
+        <p><strong>The Boys</strong> - Sebuah satir tentang superhero yang disalahgunakan untuk kepentingan komersial dan politik. Serial ini menunjukkan bahwa kekuatan besar sering kali diiringi dengan korupsi dan kejahatan.</p>
+        <p><strong>The Punisher</strong> - Berkisah tentang Frank Castle, seorang pria yang kehilangan keluarganya dan memilih jalan balas dendam. Serial ini mempertanyakan batas antara keadilan dan kekerasan.</p>
+    </div>
+    
+    <div class="container" id="contact">
+        <h1>Kontak</h1>
+        <p>Email: syaftodelitis@gmail.com</p>
+        <p>Instagram: @syafxhwhw</p>
+        <p>Letterboxd: @SYFXROASTINXX</p>
+        <p>Tiktok:syfxzz1</p>
+    </div>
+</body>
+</html>
